@@ -16,7 +16,7 @@ async function getPhotographers() {
 
   const response = await fetch("/data/photographers.json");
   const photographers = await response.json();
-
+  //   console.log(response);
   //   const photographers = [
   //     {
   //       name: "Ma data test",
@@ -45,8 +45,10 @@ async function displayData(photographers) {
   const photographersSection = document.querySelector(".photographer_section");
 
   photographers.forEach((photographers) => {
+    // console.log(photographers);
     const photographerModel = photographerFactory(photographers);
     const userCardDOM = photographerModel.getUserCardDOM();
+    // console.log("USER", userCardDOM);
     photographersSection.appendChild(userCardDOM);
   });
 }
